@@ -1,8 +1,13 @@
+"use client";
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import Navbar from "../../components/layout/Navbar";
 import Footer from "../../components/layout/Footer";
 import banner from "../../assets/banner-veesipp.png";
+import proshareLogo from "../../assets/proshare-logo.jpeg";
+import collaborationIllustration from "../../assets/undraw-collaboration.svg";
+import { HeroReveal, Interactive, Stagger, StaggerItem } from "../../components/ui/Motion";
 
 const services = [
   ["Defensa de los derechos en salud", "Acompañamiento informado para proteger el derecho fundamental a la salud."],
@@ -24,20 +29,22 @@ const services = [
 ];
 const principles = ["Transparencia", "Participación ciudadana", "Inclusión", "Equidad", "Humanización", "Independencia", "Corresponsabilidad", "Respeto por la dignidad humana", "Enfoque diferencial", "Responsabilidad social"];
 const values = ["Honestidad", "Integridad", "Empatía", "Respeto", "Solidaridad", "Compromiso", "Justicia", "Liderazgo", "Servicio", "Trabajo colaborativo"];
-const strategicAllies = ["Logo del aliado", "Logo del aliado", "Logo del aliado", "Logo del aliado"];
+const strategicAllies = [
+  { name: "ProShare", href: "https://www.proshareapp.com", logo: proshareLogo },
+];
 
 function WorkCard({ title, copy, icon }: { title: string; copy: string; icon: string }) {
-  return <article className="info-card"><span className="card-icon">{icon}</span><h3 className="card-title">{title}</h3><p className="card-copy">{copy}</p></article>;
+  return <StaggerItem><article className="info-card"><span className="card-icon">{icon}</span><h3 className="card-title">{title}</h3><p className="card-copy">{copy}</p></article></StaggerItem>;
 }
 
 export default function Home() {
   const [sent, setSent] = useState(false);
   const submit = (event: React.FormEvent<HTMLFormElement>) => { event.preventDefault(); setSent(true); event.currentTarget.reset(); };
   return <div id="inicio" className="site-shell"><Navbar /><main>
-    <section className="site-banner"><div className="page-wrap"><img src={banner} alt="VEESIPP Colombia: vigilamos, participamos y transformamos" /></div></section>
+    <section className="site-banner"><div className="page-wrap"><img src={banner.src} alt="VEESIPP Colombia: vigilamos, participamos y transformamos" /></div></section>
     <div className="page-wrap hero hero--intro">
-      <div className="hero-content"><p className="eyebrow">Veeduría ciudadana en salud</p><h1 className="display">Una veeduría cercana a las comunidades.</h1><p className="body-copy">Somos una Veeduría Ciudadana comprometida con la defensa del derecho fundamental a la salud integral y la salud mental, promoviendo transparencia, participación ciudadana y control social para construir un sistema de salud más humano, eficiente y cercano a las personas.</p><div className="hero-actions"><a className="button button--coral" href="#pqrs">Presentar una PQRS <span>→</span></a><a className="button button--outline" href="#labor">Conoce nuestra labor</a></div></div>
-      <aside className="intro-aside" aria-label="Nuestro compromiso"><p className="eyebrow">Nuestro compromiso</p><h2>Escuchar, orientar y construir soluciones.</h2><p>Trabajamos con las comunidades y las instituciones para impulsar una atención en salud digna, humana y oportuna.</p><div className="intro-points"><span>Vigilancia ciudadana</span><span>Participación informada</span><span>Bienestar integral</span><span>Transformación social</span></div></aside>
+      <HeroReveal className="hero-content"><p className="eyebrow">Veeduría ciudadana en salud</p><h1 className="display">Una veeduría cercana a las comunidades.</h1><p className="body-copy">Somos una Veeduría Ciudadana comprometida con la defensa del derecho fundamental a la salud integral y la salud mental, promoviendo transparencia, participación ciudadana y control social para construir un sistema de salud más humano, eficiente y cercano a las personas.</p><div className="hero-actions"><Interactive><a className="button button--coral" href="#pqrs">Presentar una PQRS <span>→</span></a></Interactive><Interactive><a className="button button--outline" href="#labor">Conoce nuestra labor</a></Interactive></div></HeroReveal>
+      <HeroReveal className="hero-visual hero-visual--home"><img src={collaborationIllustration.src} alt="Personas colaborando para construir soluciones" /><div className="hero-visual-note"><p className="eyebrow">Nuestro compromiso</p><p>Escuchar, orientar y construir soluciones.</p></div></HeroReveal>
     </div>
 
     <section className="trust-strip" aria-label="Compromisos institucionales"><div className="page-wrap trust-grid"><div className="trust-intro"><p className="eyebrow">Nuestro compromiso</p><p>Una veeduría que acompaña con respeto, evidencia y vocación de servicio.</p></div><div className="trust-item"><span className="trust-icon">§</span><div><strong>Fundamento legal</strong><span>Ley 850 de 2003</span></div></div><div className="trust-item"><span className="trust-icon">◎</span><div><strong>Enfoque ciudadano</strong><span>Participación y control social</span></div></div><div className="trust-item"><span className="trust-icon">+</span><div><strong>Salud integral</strong><span>Bienestar físico y mental</span></div></div></div></section>
@@ -54,11 +61,11 @@ export default function Home() {
 
     <section className="section"><div className="page-wrap"><div className="section-intro"><p className="eyebrow">Nuestro portafolio</p><h2 className="heading">¿Cómo podemos ayudarte?</h2><p className="body-copy">Acciones de orientación, vigilancia, formación y articulación para fortalecer una salud más cercana y participativa.</p></div><div className="card-grid portfolio">{services.map(([title, copy], i) => <WorkCard key={title} title={title} copy={copy} icon={["+", "↗", "◌", "✦"][i % 4]} />)}</div></div></section>
 
-    <section className="section"><div className="page-wrap cta"><div className="stack"><p className="eyebrow">Salud mental comunitaria</p><h2 className="heading">La salud mental también es un derecho.</h2><p className="body-copy">La salud mental forma parte integral del derecho a la salud. Trabajamos por su promoción, prevención y fortalecimiento comunitario desde una mirada humana, respetuosa y esperanzadora.</p><Link className="button button--coral" to="/salud-mental">Conoce más <span>→</span></Link></div><div className="cta-badge">Cuidar la salud mental es cuidar la vida.</div></div></section>
+    <section className="section"><div className="page-wrap cta"><div className="stack"><p className="eyebrow">Salud mental comunitaria</p><h2 className="heading">La salud mental también es un derecho.</h2><p className="body-copy">La salud mental forma parte integral del derecho a la salud. Trabajamos por su promoción, prevención y fortalecimiento comunitario desde una mirada humana, respetuosa y esperanzadora.</p><Link className="button button--coral" href="/salud-mental">Conoce más <span>→</span></Link></div><div className="cta-badge">Cuidar la salud mental es cuidar la vida.</div></div></section>
 
-    <section className="section"><div className="page-wrap split"><div className="stack"><p className="eyebrow">Participación ciudadana</p><h2 className="heading">Tu voz también transforma</h2><p className="body-copy">Puedes participar, informar situaciones, presentar casos, aportar información y hacer parte de los procesos de control social. Tu experiencia ayuda a construir soluciones más cercanas a las personas.</p><Link className="button" to="/participacion">Quiero participar <span>→</span></Link></div><div className="soft-panel"><p className="quote">Informar · Aportar · Dialogar · Proponer · Construir</p></div></div></section>
+    <section className="section"><div className="page-wrap split"><div className="stack"><p className="eyebrow">Participación ciudadana</p><h2 className="heading">Tu voz también transforma</h2><p className="body-copy">Puedes participar, informar situaciones, presentar casos, aportar información y hacer parte de los procesos de control social. Tu experiencia ayuda a construir soluciones más cercanas a las personas.</p><Link className="button" href="/participacion">Quiero participar <span>→</span></Link></div><div className="soft-panel"><p className="quote">Informar · Aportar · Dialogar · Proponer · Construir</p></div></div></section>
 
-    <section className="section allies-section"><div className="page-wrap allies-layout"><div className="allies-copy"><p className="eyebrow">Trabajo colaborativo</p><h2 className="heading">Aliados estratégicos</h2><p className="body-copy">Construimos alianzas con organizaciones e instituciones que comparten el compromiso por una salud más humana, participativa y cercana.</p></div><div className="allies-logos" aria-label="Espacio para logos de aliados estratégicos">{strategicAllies.map((label, index) => <div className="ally-logo-slot" key={`${label}-${index}`}><span>{label}</span></div>)}</div><p className="allies-note">Este espacio está listo para incorporar los logos de los aliados institucionales.</p></div></section>
+    <section className="section allies-section"><div className="page-wrap allies-layout"><div className="allies-copy"><p className="eyebrow">Trabajo colaborativo</p><h2 className="heading">Aliados estratégicos</h2><p className="body-copy">Construimos alianzas con organizaciones e instituciones que comparten el compromiso por una salud más humana, participativa y cercana.</p></div><div className="allies-logos" aria-label="Aliados estratégicos">{strategicAllies.map((ally) => <a className="ally-logo-slot" href={ally.href} key={ally.name} aria-label={`Visitar ${ally.name}`}><img src={ally.logo.src} alt="" /><span>{ally.name}</span></a>)}</div></div></section>
 
     <section id="pqrs" className="section pqrs-section"><div className="page-wrap pqrs-layout"><div className="pqrs-copy"><p className="eyebrow">PQRS</p><h2>¿Tienes una situación que quieres reportar?</h2><p>Cuéntanos tu caso. Estamos para escucharte, orientarte y acompañarte.</p></div><div className="pqrs-form-wrap">{sent && <p className="pqrs-success" role="status">Tu PQRS fue enviada correctamente. Recibirás confirmación en tu correo.</p>}<form onSubmit={submit} className="pqrs-form"><label>Nombre<input required name="nombre" placeholder="Tu nombre" /></label><label>Correo electrónico<input required type="email" name="correo" placeholder="nombre@correo.com" /></label><label>Teléfono<input name="telefono" placeholder="Tu teléfono" /></label><label>Ciudad<input name="ciudad" placeholder="Tu ciudad" /></label><label className="pqrs-full">Tipo de solicitud<select name="tipo" defaultValue="Petición"><option>Petición</option><option>Queja</option><option>Reclamo</option><option>Sugerencia</option></select></label><label className="pqrs-full">Descripción del caso<textarea required name="descripcion" rows={5} placeholder="Cuéntanos lo que consideres importante" /></label><p className="pqrs-attachment">Adjuntar documentos · Próximamente</p><label className="pqrs-consent"><input required type="checkbox" name="terminos" />Acepto el tratamiento de datos personales.</label><div className="pqrs-full"><button className="button pqrs-submit" type="submit">Enviar PQRS <span>→</span></button></div></form></div></div></section>
 

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import logo from "../../assets/logo-veesipp-colombia.png";
 
 export default function Footer() {
@@ -7,8 +7,8 @@ export default function Footer() {
       <div className="page-wrap">
         <div className="footer-grid">
           <div>
-            <Link to="/" className="brand">
-              <img className="brand-logo" src={logo} alt="VEESIPP Colombia" />
+            <Link href="/" className="brand">
+              <img className="brand-logo" src={logo.src} alt="VEESIPP Colombia" />
             </Link>
             <p>
               Vigilando, participando y transformando el bienestar integral de
@@ -22,16 +22,16 @@ export default function Footer() {
                 <a href="/#inicio">Inicio</a>
               </li>
               <li>
-                <Link to="/nosotros">Nosotros</Link>
+                <Link href="/nosotros">Nosotros</Link>
               </li>
               <li>
-                <Link to="/que-hacemos">Servicios</Link>
+                <Link href="/que-hacemos">Servicios</Link>
               </li>
               <li>
-                <Link to="/salud-mental">Salud mental</Link>
+                <Link href="/salud-mental">Salud mental</Link>
               </li>
               <li>
-                <Link to="/participacion">Participación ciudadana</Link>
+                <Link href="/participacion">Participación ciudadana</Link>
               </li>
               <li>
                 <a href="/#pqrs">PQRS</a>

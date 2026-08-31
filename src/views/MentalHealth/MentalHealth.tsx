@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import Navbar from "../../components/layout/Navbar";
 import Footer from "../../components/layout/Footer";
 
@@ -19,7 +19,7 @@ export default function MentalHealth() {
               <p className="eyebrow">Salud mental comunitaria</p>
               <h1 className="display">La salud mental tambi&eacute;n es un derecho.</h1>
               <p className="body-copy">Trabajamos por la promoci&oacute;n, prevenci&oacute;n y fortalecimiento comunitario desde una mirada humana, respetuosa y esperanzadora.</p>
-              <Link className="button button--coral" to="/registro">Reg&iacute;strate <span>&rarr;</span></Link>
+              <Link className="button button--coral" href="/registro">Reg&iacute;strate <span>&rarr;</span></Link>
             </div>
             <div className="soft-panel"><p className="quote">El bienestar se construye en comunidad.</p></div>
           </div>
