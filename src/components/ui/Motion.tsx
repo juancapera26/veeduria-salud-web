@@ -6,14 +6,17 @@ import { motion, useReducedMotion } from "motion/react";
 type ChildrenProps = {
   children: ReactNode;
   className?: string;
+  delay?: number;
+  "aria-labelledby"?: string;
 };
 
-export function Reveal({ children, className }: ChildrenProps) {
+export function Reveal({ children, className, ...props }: ChildrenProps) {
   const reduceMotion = useReducedMotion();
 
   return (
     <motion.div
       className={className}
+      {...props}
       initial={reduceMotion ? false : { opacity: 0, y: 20 }}
       whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.18 }}
@@ -24,7 +27,7 @@ export function Reveal({ children, className }: ChildrenProps) {
   );
 }
 
-export function HeroReveal({ children, className }: ChildrenProps) {
+export function HeroReveal({ children, className, delay = 0 }: ChildrenProps) {
   const reduceMotion = useReducedMotion();
 
   return (
@@ -32,11 +35,21 @@ export function HeroReveal({ children, className }: ChildrenProps) {
       className={className}
       initial={reduceMotion ? false : { opacity: 0, y: 18 }}
       animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
   );
+}
+
+export function VisualReveal({ children, className, delay = 0 }: ChildrenProps) {
+  const reduceMotion = useReducedMotion();
+  return <motion.div className={className} initial={reduceMotion ? false : { opacity: 0, x: 18, scale: 0.985 }} animate={reduceMotion ? undefined : { opacity: 1, x: 0, scale: 1 }} transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}>{children}</motion.div>;
+}
+
+export function MotionCard({ children, className }: ChildrenProps) {
+  const reduceMotion = useReducedMotion();
+  return <motion.div className={className} whileHover={reduceMotion ? undefined : { y: -3, scale: 1.01 }} whileTap={reduceMotion ? undefined : { scale: 0.99 }} transition={{ type: "spring", stiffness: 360, damping: 27 }}>{children}</motion.div>;
 }
 
 export function Stagger({ children, className }: ChildrenProps) {

@@ -1,9 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { motion, useReducedMotion } from "motion/react";
 import logo from "../../assets/logo-veesipp-colombia.png";
 
 export default function Footer() {
+  const reduceMotion = useReducedMotion();
   return (
-    <footer className="site-footer">
+    <motion.footer className="site-footer" initial={reduceMotion ? false : { opacity: 0, y: 18 }} whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }} viewport={{ once: true, amount: .1 }} transition={{ duration: .5 }}>
       <div className="page-wrap">
         <div className="footer-grid">
           <div>
@@ -59,6 +63,6 @@ export default function Footer() {
           <span>Política de privacidad · Tratamiento de datos</span>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }
