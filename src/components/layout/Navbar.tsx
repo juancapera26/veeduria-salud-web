@@ -5,7 +5,7 @@ import logo from "../../assets/logo-veesipp-colombia.png";
 const links = [
   { to: "/", label: "Inicio" }, { to: "/nosotros", label: "Nosotros" },
   { to: "/que-hacemos", label: "Qué hacemos" }, { to: "/salud-mental", label: "Salud mental" },
-  { to: "/participacion", label: "Participación" },
+  { to: "/participacion", label: "Participación" }, { to: "/contacto", label: "Contacto" },
 ];
 
 export default function Navbar() {
