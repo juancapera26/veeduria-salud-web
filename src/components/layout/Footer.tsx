@@ -41,6 +41,10 @@ export default function Footer() {
                 <a href="/#pqrs">PQRS</a>
               </li>
             </ul>
+            <div className="social-links" aria-label="Redes sociales">
+              <a href="https://www.instagram.com/veesipp" target="_blank" rel="noreferrer" aria-label="Instagram de VEESIPP">Instagram <span>↗</span></a>
+              <a href="https://www.facebook.com/share/1DgZ9qdA8R/" target="_blank" rel="noreferrer" aria-label="Facebook de VEESIPP">Facebook <span>↗</span></a>
+            </div>
           </div>
           <div>
             <h4>Contacto</h4>
