@@ -1,0 +1,58 @@
+.congreso-page { overflow: hidden; background: #fff; color: #09254a; font-family: Montserrat, Arial, sans-serif; }
+.congreso-wrap { width: min(1240px, calc(100% - 96px)); margin: 0 auto; }
+.congreso-hero { background: #fff; }
+.congreso-topline { display: flex; justify-content: space-between; align-items: center; min-height: 190px; border-bottom: 1px solid #e4e8eb; }
+.congreso-topline img { width: 185px; height: 145px; object-fit: contain; }
+.personeria-mark { display: grid; justify-items: center; gap: 3px; color: #111; font-size: 14px; font-weight: 600; text-align: center; }
+.personeria-mark::before { width: 68px; height: 58px; margin-bottom: 3px; border: 4px solid #d0a321; border-radius: 45% 45% 16% 16%; background: linear-gradient(135deg, #2b6d9f 0 48%, #cf2d2d 48% 100%); content: ""; }
+.personeria-mark strong { border-bottom: 3px solid #d0a321; padding-bottom: 4px; font-size: 16px; }
+.congreso-backed { border-bottom: 1px solid #e4e8eb; padding: 17px 0 27px; color: #09254a; font-size: 17px; text-align: center; }
+.congreso-hero-content { position: relative; min-height: 650px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+.congreso-hero-copy { position: relative; z-index: 2; padding: 76px 0 90px; }
+.congreso-eyebrow { margin: 0 0 28px; color: #d3a548; font-family: Georgia, serif; font-size: 27px; letter-spacing: .16em; text-transform: uppercase; }
+.congreso-place { margin: 0 0 30px; color: #009b83; font-size: 15px; font-weight: 800; letter-spacing: .14em; }
+.congreso-hero h1 { max-width: 850px; margin: 0; color: #09254a; font-family: "DM Serif Display", Georgia, serif; font-size: clamp(54px, 6vw, 91px); font-weight: 400; letter-spacing: -.055em; line-height: .96; }
+.congreso-hero h1 span { color: #09254a; }
+.congreso-lead { max-width: 600px; margin: 34px 0 25px; color: #2c425b; font-size: 16px; line-height: 1.55; }
+.congreso-cta { display: inline-flex; gap: 14px; align-items: center; background: #009b83; color: #fff; padding: 16px 24px; border-radius: 3px; font-size: 14px; font-weight: 800; text-transform: uppercase; }
+.congreso-cta:hover { background: #007a69; transform: translateY(-2px); }
+.congreso-watermark { position: absolute; inset: 0 0 0 42%; display: grid; place-items: center; overflow: hidden; opacity: .11; }
+.congreso-watermark img { width: min(80%, 620px); filter: grayscale(.2); }
+.congreso-alert { background: #09254a; color: #fff; }
+.congreso-alert .congreso-wrap { display: flex; gap: 20px; align-items: center; padding: 20px 0; }
+.congreso-alert strong { color: #f1c94b; font-size: 14px; text-transform: uppercase; }
+.congreso-alert span { font-size: 13px; line-height: 1.45; }
+.congreso-section { padding: 100px 0; }
+.congreso-title { display: grid; gap: 13px; max-width: 750px; margin-bottom: 52px; }
+.congreso-title > p, .congreso-bottom > .congreso-wrap > div:first-child > p { margin: 0; color: #d3a548; font-size: 13px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.congreso-title h2, .congreso-bottom h2 { margin: 0; color: #09254a; font-family: "DM Serif Display", Georgia, serif; font-size: clamp(42px, 5vw, 70px); font-weight: 400; letter-spacing: -.055em; line-height: .95; }
+.congreso-title > span { color: #50677b; font-size: 16px; line-height: 1.5; }
+.congreso-cards { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #bfcbd0; border-bottom: 1px solid #bfcbd0; }
+.congreso-cards article { min-height: 245px; border-right: 1px solid #bfcbd0; padding: 30px; }
+.congreso-cards article:last-child { border-right: 0; }
+.congreso-cards b { color: #d04b3e; font-size: 13px; }
+.congreso-cards h3 { margin: 35px 0 14px; color: #09254a; font-size: 22px; letter-spacing: -.035em; }
+.congreso-cards p { margin: 0; color: #50677b; font-size: 14px; line-height: 1.55; }
+.congreso-agenda { background: #eef5f2; }
+.congreso-days { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.congreso-days article { min-height: 340px; border-top: 4px solid #09254a; padding: 28px 30px; background: #fff; }
+.congreso-days article:last-child { border-top-color: #d3a548; }
+.congreso-days b { color: #d04b3e; font-size: 13px; letter-spacing: .12em; }
+.congreso-days h3 { margin: 17px 0 24px; color: #09254a; font-family: "DM Serif Display", Georgia, serif; font-size: 31px; font-weight: 400; }
+.congreso-days ul { display: grid; gap: 10px; margin: 0; padding-left: 18px; color: #50677b; font-size: 14px; line-height: 1.45; }
+.congreso-days li::marker { color: #d04b3e; }
+.congreso-register { background: #09254a; }
+.congreso-title-light h2, .congreso-title-light > span { color: #fff; }
+.congreso-title-light > p { color: #f1c94b; }
+.congreso-iframe { overflow: hidden; border: 10px solid #fff; background: #fff; box-shadow: 0 20px 46px rgba(0,0,0,.22); }
+.congreso-iframe iframe { display: block; }
+.congreso-success { margin-bottom: 18px; padding: 15px 18px; background: #e3f0dd; color: #09254a; font-size: 14px; }
+.congreso-bottom { padding: 90px 0 120px; background: #fff; }
+.congreso-bottom .congreso-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.congreso-bottom-info { display: grid; align-content: end; gap: 8px; color: #50677b; font-size: 15px; }
+.congreso-bottom-info strong { color: #09254a; font-size: 18px; }
+.congreso-rule { grid-column: 1 / -1; height: 3px; background: #d3a548; }
+@media (max-width: 800px) { .congreso-wrap { width: min(100% - 40px, 620px); } .congreso-topline { min-height: 135px; } .congreso-topline img { width: 145px; height: 105px; } .congreso-hero-content, .congreso-days, .congreso-bottom .congreso-wrap { grid-template-columns: 1fr; } .congreso-hero-copy { padding: 60px 0 30px; } .congreso-watermark { inset: 32% 0 0; } .congreso-cards { grid-template-columns: 1fr; } .congreso-cards article { min-height: auto; border-right: 0; border-bottom: 1px solid #bfcbd0; } .congreso-cards article:last-child { border-bottom: 0; } }
+@media (max-width: 480px) { .congreso-topline { align-items: flex-start; padding-top: 18px; } .congreso-topline img { width: 125px; } .personeria-mark { font-size: 11px; } .personeria-mark strong { font-size: 13px; } .congreso-backed { font-size: 13px; line-height: 1.4; } .congreso-hero h1 { font-size: 52px; } .congreso-section { padding: 70px 0; } .congreso-iframe { border-width: 5px; } }
+
+

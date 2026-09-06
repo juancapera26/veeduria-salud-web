@@ -1,0 +1,61 @@
+.pdf-registration { --pdf-navy: #071f3f; --pdf-blue: #0e3968; --pdf-gold: #e6b52f; --pdf-red: #c83d36; min-height: 100vh; background: #fff; color: var(--pdf-navy); }
+.pdf-page { width: min(1180px, calc(100% - 96px)); margin: 0 auto; }
+.pdf-hero { min-height: 760px; padding: 30px 0 84px; background: var(--pdf-navy); color: #fff; }
+.pdf-logos { display: flex; align-items: center; justify-content: space-between; min-height: 86px; border-bottom: 1px solid rgba(255,255,255,.25); }
+.pdf-logos img { width: 184px; height: 74px; object-fit: contain; background: #fff; border-radius: 4px; }
+.pdf-supporter { color: #fff; font-size: 14px; line-height: .9; text-transform: uppercase; letter-spacing: .08em; }
+.pdf-supporter strong { color: var(--pdf-gold); font-size: 20px; }
+.pdf-hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 70px; align-items: center; padding-top: 86px; }
+.pdf-hero-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.pdf-overline, .pdf-section-heading > p, .pdf-footer p { margin: 0; color: var(--pdf-gold); font-size: 12px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+.pdf-hero h1 { margin: 0; font-size: clamp(56px, 8vw, 108px); font-weight: 300; letter-spacing: -.08em; line-height: .82; text-transform: uppercase; }
+.pdf-hero h1 strong { color: var(--pdf-gold); font-weight: 800; }
+.pdf-subtitle { margin: 0; color: #fff; font-size: 26px; font-weight: 700; letter-spacing: -.04em; }
+.pdf-lead { max-width: 560px; margin: 12px 0 0; color: #dce8f2; font-size: 17px; line-height: 1.55; }
+.pdf-date { display: grid; gap: 5px; border-left: 4px solid var(--pdf-red); padding: 7px 0 7px 16px; }
+.pdf-date strong { font-size: 19px; }
+.pdf-date span { color: #bfcedf; font-size: 14px; }
+.pdf-button { display: inline-flex; gap: 13px; align-items: center; margin-top: 12px; border-radius: 4px; padding: 16px 22px; background: var(--pdf-red); color: #fff; font-size: 14px; font-weight: 800; text-transform: uppercase; }
+.pdf-button:hover { background: #e05448; transform: translateY(-2px); }
+.pdf-hero-visual { position: relative; display: grid; min-height: 420px; place-items: center; overflow: hidden; border: 1px solid rgba(255,255,255,.2); background: var(--pdf-blue); }
+.pdf-hero-visual img { position: relative; z-index: 2; width: min(76%, 360px); height: auto; }
+.pdf-visual-orbit { position: absolute; width: 420px; height: 420px; border: 2px solid var(--pdf-gold); border-radius: 50%; opacity: .75; }
+.pdf-important { background: var(--pdf-gold); color: var(--pdf-navy); }
+.pdf-important .pdf-page { display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; padding: 23px 0; }
+.pdf-important strong { font-size: 14px; letter-spacing: .1em; text-transform: uppercase; }
+.pdf-important p { margin: 0; font-size: 14px; line-height: 1.5; }
+.pdf-section { padding: 92px 0; }
+.pdf-section-heading { display: grid; gap: 12px; max-width: 700px; margin-bottom: 48px; }
+.pdf-section-heading > p, .pdf-footer p { color: var(--pdf-red); }
+.pdf-section-heading h2, .pdf-footer h2 { margin: 0; color: var(--pdf-navy); font-size: clamp(38px, 5vw, 70px); letter-spacing: -.075em; line-height: .9; }
+.pdf-section-heading > span { color: #537083; font-size: 17px; line-height: 1.5; }
+.pdf-three-columns { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #b9c6cc; border-bottom: 1px solid #b9c6cc; }
+.pdf-three-columns article { min-height: 270px; border-right: 1px solid #b9c6cc; padding: 30px; }
+.pdf-three-columns article:last-child { border-right: 0; }
+.pdf-three-columns b { color: var(--pdf-red); font-size: 13px; }
+.pdf-three-columns h3 { margin: 36px 0 14px; color: var(--pdf-navy); font-size: 24px; letter-spacing: -.045em; }
+.pdf-three-columns p, .pdf-day li, .pdf-day p { margin: 0; color: #537083; font-size: 15px; line-height: 1.55; }
+.pdf-agenda { background: #edf3f1; }
+.pdf-agenda-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.pdf-day { border-top: 4px solid var(--pdf-navy); padding: 26px 30px 32px; background: #fff; }
+.pdf-day-gold { border-top-color: var(--pdf-gold); }
+.pdf-day b { color: var(--pdf-red); font-size: 13px; letter-spacing: .13em; }
+.pdf-day h3 { margin: 15px 0 24px; color: var(--pdf-navy); font-size: 30px; letter-spacing: -.05em; }
+.pdf-day ul { display: grid; gap: 11px; margin: 0; padding-left: 19px; }
+.pdf-day li::marker { color: var(--pdf-red); }
+.pdf-form { background: var(--pdf-navy); }
+.pdf-light h2, .pdf-light > span { color: #fff; }
+.pdf-light > p { color: var(--pdf-gold); }
+.pdf-iframe-wrap { overflow: hidden; border: 10px solid #fff; background: #fff; box-shadow: 0 20px 44px rgba(0,0,0,.22); }
+.pdf-iframe-wrap iframe { display: block; }
+.pdf-success { display: grid; gap: 5px; margin-bottom: 18px; padding: 16px 20px; background: #e8f3df; color: var(--pdf-navy); }
+.pdf-success span { font-size: 14px; }
+.pdf-footer { padding: 90px 0 110px; background: #f5f1eb; }
+.pdf-footer .pdf-page { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+.pdf-footer h2 { margin-top: 12px; }
+.pdf-footer-info { display: grid; align-content: end; gap: 9px; color: #537083; font-size: 15px; }
+.pdf-footer-info strong { color: var(--pdf-navy); font-size: 18px; }
+.pdf-footer-line { grid-column: 1 / -1; height: 3px; margin-top: 30px; background: var(--pdf-gold); }
+@media (max-width: 800px) { .pdf-page { width: min(100% - 40px, 620px); } .pdf-hero-grid, .pdf-important .pdf-page, .pdf-footer .pdf-page { grid-template-columns: 1fr; } .pdf-hero-grid { gap: 46px; padding-top: 58px; } .pdf-hero { min-height: auto; } .pdf-three-columns, .pdf-agenda-grid { grid-template-columns: 1fr; } .pdf-three-columns article { min-height: auto; border-right: 0; border-bottom: 1px solid #b9c6cc; } .pdf-three-columns article:last-child { border-bottom: 0; } }
+@media (max-width: 480px) { .pdf-logos { align-items: flex-start; gap: 20px; flex-direction: column; padding-bottom: 18px; } .pdf-hero h1 { font-size: 55px; } .pdf-section { padding: 66px 0; } .pdf-iframe-wrap { border-width: 5px; } }
+

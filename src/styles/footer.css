@@ -1,0 +1,111 @@
+.site-footer {
+  margin-top: 88px;
+  padding: 68px 0 28px;
+  background: #092e73;
+}
+.footer-grid {
+  grid-template-columns: 1.35fr 0.75fr 1.05fr;
+  gap: 64px;
+  padding-bottom: 52px;
+}
+.site-footer .brand {
+  display: inline-flex;
+  width: 118px;
+  height: 118px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+.site-footer .brand-logo {
+  width: 98px;
+  height: 98px;
+  border-radius: 6px;
+  background: transparent;
+  object-fit: contain;
+}
+.footer-grid p {
+  max-width: 520px;
+  margin: 15px 0 0;
+  color: #edf3ff;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.footer-grid h4 {
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 11px;
+  font-size: 16px;
+}
+.footer-grid h4::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 34px;
+  height: 3px;
+  border-radius: 99px;
+  background: #fbb713;
+  content: "";
+}
+.footer-grid ul {
+  gap: 11px;
+}
+.footer-grid li {
+  font-size: 15px;
+}
+.footer-grid a {
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+.footer-grid ul a:hover {
+  padding-left: 4px;
+}
+.footer-bottom {
+  padding-top: 26px;
+  color: #edf3ff;
+  font-size: 13px;
+}
+.footer-bottom a {
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+.footer-bottom a:hover {
+  padding-left: 4px;
+  color: #fbb713;
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+@media (max-width: 560px) {
+  .site-footer {
+    margin-top: 60px;
+    padding-top: 48px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding-bottom: 38px;
+  }
+  .site-footer .brand {
+    width: 108px;
+    height: 108px;
+    padding: 9px;
+  }
+  .site-footer .brand-logo {
+    width: 90px;
+    height: 90px;
+  }
+  .footer-grid p {
+    font-size: 15px;
+  }
+}
+
+/* Institutional trust strip */
