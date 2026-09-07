@@ -7,7 +7,6 @@ type EmbedMessage = { source?: string; type?: string; event?: string; height?: n
 
 export function useRegistrationEmbed() {
   const frameRef = useRef<HTMLIFrameElement>(null);
-  const redirectRef = useRef<number | null>(null);
   const frameLoadedRef = useRef(false);
   const [confirmed, setConfirmed] = useState(false);
 
@@ -24,17 +23,17 @@ export function useRegistrationEmbed() {
       if (registrationConfirmed) {
         setConfirmed(true);
         const redirectUrl = data.redirectUrl ?? data.redirect_url;
-        if (redirectUrl && redirectRef.current === null) redirectRef.current = window.setTimeout(() => { window.location.href = redirectUrl; }, 3000);
+        if (redirectUrl) window.location.href = redirectUrl;
       }
     };
     window.addEventListener("message", onMessage);
-    return () => { window.removeEventListener("message", onMessage); if (redirectRef.current !== null) window.clearTimeout(redirectRef.current); };
+    return () => window.removeEventListener("message", onMessage);
   }, []);
 
   const handleFrameLoad = () => {
     if (frameLoadedRef.current) {
       setConfirmed(true);
-      if (redirectRef.current === null) redirectRef.current = window.setTimeout(() => { window.location.href = "/"; }, 3000);
+      window.location.href = "/";
     }
     frameLoadedRef.current = true;
   };

@@ -1,4 +1,4 @@
-import banner from "../../assets/banner-veesipp.png";
+import banner from "../../assets/banner-veesipp-nuevo.jpeg";
 import collaborationIllustration from "../../assets/undraw-collaboration.svg";
 import communityIllustration from "../../assets/undraw-community.svg";
 import contactIllustration from "../../assets/undraw-contact.svg";
